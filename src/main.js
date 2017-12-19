@@ -4,7 +4,7 @@ import config from './config';
 import binanceService from './binanceService';
 
 const app = http.createServer(function(req, res) {
-  binanceService.getAccountInfo()
+  binanceService.getAccountInfo(req.headers.key, req.headers.secret)
   .then((accountInfo) => {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write(JSON.stringify(accountInfo));

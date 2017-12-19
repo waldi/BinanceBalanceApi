@@ -2,11 +2,6 @@ import Binance from 'binance-api-node'
 import https from 'https';
 import config from './config';
 
-const client = Binance({
-  apiKey: config.binance.apiKey,
-  apiSecret: config.binance.apiSecret
-})
-
 const btcPricePromise = (symbol) => new Promise((resolve, reject) => {
   https.get(`https://api.coinbase.com/v2/prices/${symbol}/spot`, (res) => {
     let data = "";
@@ -18,7 +13,12 @@ const btcPricePromise = (symbol) => new Promise((resolve, reject) => {
   });
 });
 
-const getAccountInfo = () => new Promise((resolve, reject) => {
+const getAccountInfo = (apiKey, apiSecret) => new Promise((resolve, reject) => {
+  const client = Binance({
+    apiKey,
+    apiSecret
+  })
+
   Promise.all([client.accountInfo(), client.prices(), btcPricePromise('EUR'), btcPricePromise('USD')])
   .then(results => {
     const balances = results[0].balances.filter((balance) => balance.free > 0);

@@ -4,8 +4,17 @@ Node service to retrieve your binance balance
 
 ### Running
 
-Add api keys to config.js
-
 ```
 npm install && npm start
 ```
+
+### API
+
+Headers:
+ - Key: Binance Api Key
+ - Secret Binance Api Key Secret
+
+```
+  GET /
+```
+Gets account info
