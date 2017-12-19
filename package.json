@@ -1,0 +1,22 @@
+{
+  "name": "BinanceBalanceApi",
+  "version": "0.0.1",
+  "description": "Binance Balance Api",
+  "main": "run.js",
+  "scripts": {
+    "start": "node run.js"
+  },
+  "keywords": [
+    "node",
+    "binance",
+    "api"
+  ],
+  "author": "Waldemar Barbe <barbewaldemar@googlemail.com>",
+  "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.3.16",
+    "babel-register": "^6.3.13"
+  },
+  "dependencies": {
+    "binance-api-node": "^0.3.1"
+  }
+}
