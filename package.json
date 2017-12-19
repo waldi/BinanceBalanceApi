@@ -12,11 +12,9 @@
     "api"
   ],
   "author": "Waldemar Barbe <barbewaldemar@googlemail.com>",
-  "devDependencies": {
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.3.16",
-    "babel-register": "^6.3.13"
-  },
   "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.3.16",
+    "babel-register": "^6.3.13",
     "binance-api-node": "^0.3.1"
   }
 }
